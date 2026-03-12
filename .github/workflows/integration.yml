@@ -14,20 +14,25 @@ jobs:
     strategy:
       matrix:
         node-version: [18.x, 20.x, 22.x]
-        # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
 
     steps:
     - uses: actions/checkout@v4
+
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v4
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
-    - name: installing dependencies 
+        cache-dependency-path: client/package-lock.json
+
+    - name: installing dependencies
       run: npm i
+      working-directory: ./client
+
     - name: Build command
-      run: npm run build 
-    - run: npm test
+      run: npm run build
+      working-directory: ./client
+
 
 
   unit-test:
@@ -37,16 +42,21 @@ jobs:
     strategy:
       matrix:
         node-version: [18.x, 20.x, 22.x]
-        # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
 
     steps:
     - uses: actions/checkout@v4
+
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v4
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
-    - name: "installing dependencies"
+        cache-dependency-path: client/package-lock.json
+
+    - name: installing dependencies
       run: npm i
-    - name: "Ruuning unit test" 
-      run: npm run test
+      working-directory: ./client
+
+    - name: Unit testing
+      run: npm test
+      working-directory: ./client
