@@ -49,4 +49,4 @@ jobs:
     - name: "installing dependencies"
       run: npm i
     - name: "Ruuning unit test" 
-    - run: npm run test
+      run: npm run test
