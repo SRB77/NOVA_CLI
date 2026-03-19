@@ -1,7 +1,6 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
-import {createAuthClient} from "better-auth/react";
+import { createAuthClient } from "better-auth/react";
 
 export const authClient = createAuthClient({
-    baseURL: "http://localhost:4001",    
-})
-
+  baseURL: "http://localhost:4001",
+});
