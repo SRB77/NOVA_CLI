@@ -21,7 +21,7 @@
     "cors": "^2.8.5",
     "dotenv": "^17.2.3",
     "express": "^5.2.1",
-    "prisma": "^6.19.1"
+    "prisma": "^7.5.0"
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",
