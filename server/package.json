@@ -16,7 +16,7 @@
   "type": "module",
   "description": "This the backend of nova Cli application",
   "dependencies": {
-    "@prisma/client": "^6.19.1",
+    "@prisma/client": "^7.5.0",
     "better-auth": "^1.4.10",
     "cors": "^2.8.5",
     "dotenv": "^17.2.3",
