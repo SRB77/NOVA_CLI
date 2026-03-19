@@ -26,6 +26,18 @@ jobs:
       working-directory: ./client
       run: npm i
 
+    - name: Run lint (Client)
+      working-directory: ./client
+      run: npm run lint
+
+    - name: Run format (Client)
+      working-directory: ./client
+      run: npm run format:check
+
+    - name: Run test (Client)
+      working-directory: ./client
+      run: npm run test
+
     - name: Run build (Client)
       working-directory: ./client
       run: npm run build
@@ -33,3 +45,15 @@ jobs:
     - name: Install dependencies (Server)
       working-directory: ./server
       run: npm i
+
+    - name: Run lint (Server)
+      working-directory: ./server
+      run: npm run lint --if-present
+
+    - name: Run format (Server)
+      working-directory: ./server
+      run: npm run format:check --if-present
+
+    - name: Run test (Server)
+      working-directory: ./server
+      run: npm run test
